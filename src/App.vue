@@ -53,17 +53,24 @@
 					width="340"
 					height="500"
 				></canvas>
+				<footer
+					class="p-2 mt-4 flex flex-col gap-1 items-center text-slate-700 bg-slate-100"
+				>
+					<a
+						class="hover:underline"
+						href="https://sebastiaanjansen.be"
+						target="_blank"
+						rel="noopener noreferrer"
+						>Made with ❤️ by DrSkunk</a
+					>
+					<a
+						class="hover:underline"
+						href="https://github.com/DrSkunk/melvor-stats"
+						>Source code</a
+					>
+				</footer>
 			</div>
 		</div>
-		<footer class="absolute bottom-0 left-0 right-0 flex justify-center">
-			<a
-				class="hover:underline text-slate-700"
-				href="https://sebastiaanjansen.be"
-				target="_blank"
-				rel="noopener noreferrer"
-				>Made with ❤️ by DrSkunk</a
-			>
-		</footer>
 	</div>
 </template>
 
@@ -76,8 +83,8 @@ export default {
 		const input = new URLSearchParams(window.location.search).get('input')
 		if (input) {
 			this.$refs.saveInput.value = input
+			this.drawStats()
 		}
-		this.drawStats()
 	},
 	data() {
 		return {
@@ -96,7 +103,6 @@ export default {
 				await drawStats(ctx, width, height, stats)
 				this.hasImage = true
 			} catch (error) {
-				console.log(error)
 				this.error = true
 			}
 		},
