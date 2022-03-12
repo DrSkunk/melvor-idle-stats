@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	@apply font-inter;
+	@apply bg-slate-50;
+}
+
+html,
+body,
+#app {
+	@apply h-full;
+}
