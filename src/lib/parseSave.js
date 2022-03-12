@@ -30,8 +30,7 @@ export function parseSave(s) {
 		skills: skillsStats,
 		combatLevel,
 		totalLevel,
-		name,
+		name: 'Your Name',
 	}
-	console.log(stats)
 	return stats
 }

@@ -98,12 +98,9 @@ export async function drawStats(ctx, width, height, stats) {
 	const textPadding = 46
 	for (let columnIndex = 0; columnIndex < drawOrder.length; columnIndex++) {
 		const column = drawOrder[columnIndex]
-		console.log(column)
 		for (let skillIndex = 0; skillIndex < column.length; skillIndex++) {
 			const skill = column[skillIndex]
-			console.log(skill)
 			const icon = await getIcon(skill)
-			console.log(icon)
 			const x =
 				backgroundMargin +
 				iconMargin +
@@ -115,7 +112,6 @@ export async function drawStats(ctx, width, height, stats) {
 				topBarHeight +
 				iconMargin +
 				skillIndex * (iconSize + iconMargin)
-			console.log(y)
 			ctx.textAlign = 'start'
 			ctx.drawImage(icon, x, y, iconSize, iconSize)
 			ctx.fillStyle = 'rgb(245, 245, 245)'
@@ -123,7 +119,6 @@ export async function drawStats(ctx, width, height, stats) {
 			ctx.fillText(stats.skills[skill].level, x + 50, y + 25)
 		}
 	}
-	// ctx.drawImage(await getIcon('woodcutting'), 0, 0, 50, 50)
 }
 
 function bgRect(ctx, x, y, width, height, radius) {
