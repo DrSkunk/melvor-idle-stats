@@ -114,7 +114,7 @@ export async function drawStats(ctx, width, height, stats) {
 				skillIndex * (iconSize + iconMargin)
 			ctx.textAlign = 'start'
 			ctx.drawImage(icon, x, y, iconSize, iconSize)
-			ctx.fillStyle = 'rgb(245, 245, 245)'
+			ctx.fillStyle = stats.skills[skill].level >= 99 ? 'rgb(229, 174, 103)' : 'rgb(245, 245, 245)'
 			ctx.font = '20px Inter'
 			ctx.fillText(stats.skills[skill].level, x + 50, y + 25)
 		}
